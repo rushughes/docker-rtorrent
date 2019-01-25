@@ -7,7 +7,7 @@ RUN apk add --update rtorrent && \
     mkdir -p /downloads/session && \
     mkdir -p /var/run/rtorrent
 
-COPY rtorrent.rc ~/.rtorrent.rc
+COPY rtorrent.rc /root/.rtorrent.rc
 
 EXPOSE 51413 6881
 
