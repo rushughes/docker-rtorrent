@@ -17,7 +17,7 @@ schedule = low_diskspace,5,60,close_low_diskspace=100M
 bind = 0.0.0.0
 port_range = 51413-51413
 check_hash = yes
-use_udp_trackers = yes
+trackers.use_udp.set = yes
 encryption = allow_incoming,try_outgoing,enable_retry
 dht = auto
 dht_port = 6881
