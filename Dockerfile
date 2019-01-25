@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --update rtorrent && \
+RUN apk add --update rtorrent php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl && \
     mkdir -p /downloads/completed && \
     mkdir -p /downloads/incoming && \
     mkdir -p /downloads/watched && \
