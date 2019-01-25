@@ -13,4 +13,5 @@ EXPOSE 51413 6881
 
 VOLUME ["/downloads", "/var/run/rtorrent"]
 
-CMD  ["rtorrent"]
+ENTRYPOINT ["rtorrent"]
+#CMD  ["rtorrent"]
