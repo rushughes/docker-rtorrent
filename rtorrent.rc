@@ -1,7 +1,7 @@
 execute.nothrow = rm,/var/run/rtorrent/.rtorrent.sock
 network.scgi.open_local = /var/run/rtorrent/.rtorrent.sock
 schedule = socket_chmod,0,0,"execute=chmod,0660,/var/run/rtorrent/.rtorrent.sock"
-schedule = socket_chgrp,0,0,"execute=chgrp,abc,/var/run/rtorrent/.rtorrent.sock"
+schedule = socket_chgrp,0,0,"execute=chgrp,xfs,/var/run/rtorrent/.rtorrent.sock"
 log.open_file = "rtorrent", /downloads/rtorrent.log
 log.add_output = "debug", "rtorrent"
 min_peers = 40
@@ -9,7 +9,7 @@ max_peers = 1200
 max_uploads = 15
 download_rate = 10000
 upload_rate = 5000
-schedule = watch_directory_1,5,5,"load.start=/downloads/watched/*.torrent"
+schedule = watch_directory_1,5,5,"load.start=/downloads/watching/*.torrent"
 directory = /downloads/incoming
 session = /downloads/session
 schedule = low_diskspace,5,60,close_low_diskspace=100M
@@ -21,7 +21,7 @@ trackers.use_udp.set = yes
 encryption = allow_incoming,try_outgoing,enable_retry
 dht = auto
 dht_port = 6881
-peer_exchange = yes
+protocol.pex.set = yes
 # scgi_port = 0.0.0.0:5000
 encoding_list = UTF-8
 system.umask.set = 002
