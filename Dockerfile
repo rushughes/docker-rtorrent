@@ -8,8 +8,7 @@ RUN apk add --update rtorrent php7 php7-fpm php7-opcache php7-gd php7-mysqli \
     mkdir -p /downloads/session && \
     mkdir -p /var/run/rtorrent
 
-RUN groupadd -g 1000 rtorrent && \
-    adduser -D -h /home/rtorrent -u 1000 -g rtorrent rtorrent
+RUN adduser -D -h /home/rtorrent -u 1000 rtorrent
 
 RUN chown rtorrent:rtorrent /downloads/* /var/run/rtorrent
 
